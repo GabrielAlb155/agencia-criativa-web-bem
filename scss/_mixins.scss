@@ -1,0 +1,21 @@
+@use 'variaveis' as v;
+
+@mixin container {
+  width: 90%;
+  max-width: v.$largura-container;
+  margin: 0 auto;
+}
+
+@mixin botao {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: v.$raio-medio;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+@mixin espacamento-secao {
+  padding: v.$espacamento-secao 0;
+}

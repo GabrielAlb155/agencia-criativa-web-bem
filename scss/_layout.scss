@@ -1,0 +1,122 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+// Container principal
+.container {
+  @include m.container;
+}
+
+// Seções
+.secao {
+  @include m.espacamento-secao;
+  background-color: v.$cor-fundo;
+
+  &--clara {
+    background-color: v.$cor-fundo-secundario;
+  }
+}
+
+// Cabeçalho
+.cabecalho {
+  background-color: v.$cor-cabecalho;
+  border-bottom: 1px solid v.$cor-borda;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__container {
+    @include m.container;
+
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: v.$cor-branco;
+  }
+
+  &__logo-marca {
+    color: v.$cor-primaria;
+  }
+}
+
+// Menu
+.menu {
+  display: flex;
+  gap: v.$gap-medio;
+
+  &__link {
+    color: v.$cor-texto-claro;
+    font-weight: 500;
+    transition: 0.3s;
+
+    &:hover {
+      color: v.$cor-primaria;
+    }
+  }
+}
+
+// Hero
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-color: v.$cor-fundo;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__conteudo {
+    max-width: v.$largura-hero;
+  }
+
+  &__subtitulo {
+    color: v.$cor-primaria;
+    font-size: v.$tamanho-texto;
+    margin-bottom: v.$gap-pequeno;
+  }
+
+  &__titulo {
+    font-size: v.$tamanho-titulo-hero;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: v.$cor-branco;
+  }
+
+  &__destaque {
+    color: v.$cor-primaria;
+  }
+
+  &__descricao {
+    font-size: v.$tamanho-texto;
+    color: v.$cor-texto-medio;
+    margin-bottom: 30px;
+  }
+
+  &__acoes {
+    display: flex;
+    gap: v.$gap-pequeno;
+  }
+}
+
+// Cabeçalhos das seções
+.secao__cabecalho {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.secao__subtitulo {
+  display: block;
+  color: v.$cor-primaria;
+  margin-bottom: calc(v.$espacamento / 2);
+}
+
+.secao__titulo {
+  font-size: v.$tamanho-titulo-secao;
+  color: v.$cor-branco;
+}

@@ -1,0 +1,251 @@
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+// Botões
+.botao {
+  @include m.botao;
+
+  &--primario {
+    background-color: v.$cor-primaria;
+    color: v.$cor-branco;
+
+    &:hover {
+      background-color: v.$cor-primaria-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secundario {
+    background-color: transparent;
+    color: v.$cor-branco;
+    border-color: v.$cor-primaria;
+
+    &:hover {
+      background-color: v.$cor-primaria;
+      color: v.$cor-branco;
+    }
+  }
+}
+
+// Sobre
+.sobre {
+  background-color: v.$cor-fundo-secundario;
+
+  &__conteudo {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+
+    h2 {
+      font-size: v.$tamanho-titulo-secao;
+      margin-bottom: 20px;
+      color: v.$cor-branco;
+    }
+
+    p {
+      color: v.$cor-texto-medio;
+    }
+  }
+
+  &__destaques {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$gap-medio;
+  }
+}
+
+// Cards de destaque
+.destaque {
+  background-color: v.$cor-fundo-card;
+  padding: 30px;
+  text-align: center;
+  border-radius: v.$raio-grande;
+  border: 1px solid v.$cor-borda;
+
+  &__numero {
+    display: block;
+    font-size: 38px;
+    font-weight: bold;
+    color: v.$cor-primaria;
+  }
+
+  &__texto {
+    color: v.$cor-texto-suave;
+  }
+}
+
+// Serviços
+.servicos {
+  background-color: v.$cor-fundo;
+
+  &__lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$gap-medio;
+  }
+}
+
+.servico-card {
+  background-color: v.$cor-card;
+  padding: 30px;
+  border-radius: v.$raio-grande;
+  border: 1px solid v.$cor-borda;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: v.$cor-primaria;
+  }
+
+  &__icone {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__titulo {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: v.$cor-branco;
+  }
+
+  &__descricao {
+    color: v.$cor-texto-medio;
+  }
+}
+
+// Depoimentos
+.depoimentos {
+  background-color: v.$cor-fundo-secundario;
+}
+
+.depoimento {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  padding: 30px;
+  background-color: v.$cor-fundo-card;
+  border-left: 4px solid v.$cor-primaria;
+  border-radius: v.$raio-medio;
+
+  &__texto {
+    font-size: v.$tamanho-texto;
+    color: v.$cor-texto-claro;
+    margin-bottom: v.$gap-pequeno;
+  }
+
+  &__autor {
+    color: v.$cor-primaria;
+    font-weight: bold;
+  }
+}
+
+// Contato
+.contato {
+  background-color: v.$cor-fundo;
+}
+
+.formulario {
+  max-width: v.$largura-formulario;
+  margin: 0 auto;
+
+  &__grupo {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    color: v.$cor-texto-claro;
+    font-weight: bold;
+  }
+
+  &__campo {
+    width: 100%;
+    padding: 13px;
+    background-color: v.$cor-card;
+    color: v.$cor-branco;
+    border: 1px solid v.$cor-borda-input;
+    border-radius: v.$raio-pequeno;
+    font-size: 16px;
+    outline: none;
+
+    &:focus {
+      border-color: v.$cor-primaria;
+    }
+
+    &::placeholder {
+      color: v.$cor-texto-escuro;
+    }
+
+    &--area {
+      min-height: 150px;
+      resize: vertical;
+    }
+  }
+}
+
+// Rodapé
+.rodape {
+  background-color: v.$cor-rodape;
+  border-top: 1px solid v.$cor-borda;
+  padding: 30px 0;
+
+  &__container {
+    @include m.container;
+    text-align: center;
+  }
+
+  &__texto {
+    color: v.$cor-texto-escuro;
+  }
+}
+
+// Responsividade
+@media (max-width: 900px) {
+  .hero {
+    &__titulo {
+      font-size: 42px;
+    }
+  }
+
+  .sobre__destaques,
+  .servicos__lista {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cabecalho {
+    &__container {
+      flex-direction: column;
+      padding: 20px 0;
+      gap: v.$gap-pequeno;
+    }
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: v.$gap-pequeno;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: v.$espacamento-secao 0;
+
+    &__titulo {
+      font-size: 36px;
+    }
+
+    &__acoes {
+      flex-direction: column;
+    }
+  }
+
+  .botao {
+    text-align: center;
+  }
+
+  .secao {
+    padding: v.$espacamento-mobile 0;
+  }
+}

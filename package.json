@@ -1,0 +1,17 @@
+{
+  "name": "agencia-criativa-web",
+  "version": "1.0.0",
+  "description": "Agência Criativa Web - Projeto SASS",
+  "scripts": {
+    "sass": "sass scss/estilos.scss css/estilos.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielAlb155/agencia-criativa-web-bem.git"
+  },
+  "author": "Gabriel",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
+}
