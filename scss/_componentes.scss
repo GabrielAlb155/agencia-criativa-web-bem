@@ -1,7 +1,6 @@
 @use 'variaveis' as v;
 @use 'mixins' as m;
 
-// Botões
 .botao {
   @include m.botao;
 
@@ -9,7 +8,8 @@
     background-color: v.$cor-primaria;
     color: v.$cor-branco;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: v.$cor-primaria-hover;
       transform: translateY(-2px);
     }
@@ -20,14 +20,14 @@
     color: v.$cor-branco;
     border-color: v.$cor-primaria;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       background-color: v.$cor-primaria;
       color: v.$cor-branco;
     }
   }
 }
 
-// Sobre
 .sobre {
   background-color: v.$cor-fundo-secundario;
 
@@ -35,15 +35,14 @@
     max-width: 800px;
     margin: 0 auto 40px;
     text-align: center;
+  }
 
-    h2 {
-      font-size: v.$tamanho-titulo-secao;
-      margin-bottom: 20px;
-      color: v.$cor-branco;
-    }
+  &__texto {
+    color: v.$cor-texto-medio;
+    margin-bottom: 15px;
 
-    p {
-      color: v.$cor-texto-medio;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -54,7 +53,6 @@
   }
 }
 
-// Cards de destaque
 .destaque {
   background-color: v.$cor-fundo-card;
   padding: 30px;
@@ -74,7 +72,6 @@
   }
 }
 
-// Serviços
 .servicos {
   background-color: v.$cor-fundo;
 
@@ -113,7 +110,6 @@
   }
 }
 
-// Depoimentos
 .depoimentos {
   background-color: v.$cor-fundo-secundario;
 }
@@ -125,6 +121,10 @@
   background-color: v.$cor-fundo-card;
   border-left: 4px solid v.$cor-primaria;
   border-radius: v.$raio-medio;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &__texto {
     font-size: v.$tamanho-texto;
@@ -138,7 +138,6 @@
   }
 }
 
-// Contato
 .contato {
   background-color: v.$cor-fundo;
 }
@@ -183,7 +182,6 @@
   }
 }
 
-// Rodapé
 .rodape {
   background-color: v.$cor-rodape;
   border-top: 1px solid v.$cor-borda;
@@ -199,7 +197,6 @@
   }
 }
 
-// Responsividade
 @media (max-width: 900px) {
   .hero {
     &__titulo {

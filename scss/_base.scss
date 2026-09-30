@@ -22,7 +22,44 @@ a {
   color: inherit;
 }
 
+button,
+input,
+textarea {
+  font: inherit;
+}
+
 img {
   max-width: 100%;
   display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: v.$largura-container;
+  margin: 0 auto;
+}
+
+.secao {
+  padding: v.$espacamento-secao 0;
+  background-color: v.$cor-fundo;
+
+  &--clara {
+    background-color: v.$cor-fundo-secundario;
+  }
+}
+
+.secao__cabecalho {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.secao__subtitulo {
+  display: block;
+  color: v.$cor-primaria;
+  margin-bottom: 20px;
+}
+
+.secao__titulo {
+  font-size: v.$tamanho-titulo-secao;
+  color: v.$cor-branco;
 }

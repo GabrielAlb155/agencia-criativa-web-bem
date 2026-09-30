@@ -1,22 +1,6 @@
 @use 'variaveis' as v;
 @use 'mixins' as m;
 
-// Container principal
-.container {
-  @include m.container;
-}
-
-// Seções
-.secao {
-  @include m.espacamento-secao;
-  background-color: v.$cor-fundo;
-
-  &--clara {
-    background-color: v.$cor-fundo-secundario;
-  }
-}
-
-// Cabeçalho
 .cabecalho {
   background-color: v.$cor-cabecalho;
   border-bottom: 1px solid v.$cor-borda;
@@ -26,7 +10,6 @@
 
   &__container {
     @include m.container;
-
     min-height: 75px;
     display: flex;
     align-items: center;
@@ -44,7 +27,6 @@
   }
 }
 
-// Menu
 .menu {
   display: flex;
   gap: v.$gap-medio;
@@ -54,13 +36,13 @@
     font-weight: 500;
     transition: 0.3s;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: v.$cor-primaria;
     }
   }
 }
 
-// Hero
 .hero {
   min-height: 90vh;
   display: flex;
@@ -102,21 +84,4 @@
     display: flex;
     gap: v.$gap-pequeno;
   }
-}
-
-// Cabeçalhos das seções
-.secao__cabecalho {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.secao__subtitulo {
-  display: block;
-  color: v.$cor-primaria;
-  margin-bottom: calc(v.$espacamento / 2);
-}
-
-.secao__titulo {
-  font-size: v.$tamanho-titulo-secao;
-  color: v.$cor-branco;
 }
